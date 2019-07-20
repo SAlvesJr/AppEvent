@@ -13,7 +13,6 @@ public class Convidado {
 	
 	@Id
 	@NotEmpty
-	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name ="increment", strategy ="increment")
 	private String rg;
 	
