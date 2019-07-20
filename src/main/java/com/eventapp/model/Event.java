@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "tb_evento")
 public class Event implements Serializable{
@@ -18,7 +20,8 @@ public class Event implements Serializable{
 	private static final long serialVersionUID = 1l;
 		
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "increment" , strategy = GenerationType.IDENTITY)
+	@GenericGenerator(name ="increment", strategy ="increment")
 	private long id;
 	
 	@NotEmpty
